@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="CI8nelU2hSRO0NWq1KyFdgFjLWGLsUo7srFsVG79">
+
+    <title>MyVouches - Dashboard</title>
+    <meta name="og:title" content="MyVouches - Dashboard">
+
+    <link rel="icon" type="image/png" href="/storage/logos/logo.png">
+
+    <meta name="description" content="Tired of losing your discord vouches due to your server being nuked, raided or deleted? Store, Show & Recover your Discord Vouches with ease today with MyVouches.">
+    <meta name="og:description" content="Tired of losing your discord vouches due to your server being nuked, raided or deleted? Store, Show & Recover your Discord Vouches with ease today with MyVouches.">
+
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#ff765e">
+    <meta property="og:site_name" content="myvouch.es">
+
+    <meta name="og:image" content="/storage/signatures/signature.gif">
+    <meta name="og:image:width" content="700">
+    <meta name="og:image:height" content="200">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Scripts -->
+    <link rel="preload" as="style" href="https://myvouch.es/build/assets/app-7edc7687.css" />
+    <link rel="modulepreload" href="https://myvouch.es/build/assets/app-4a6b484f.js" />
+    <link rel="stylesheet" href="https://myvouch.es/build/assets/app-7edc7687.css" />
+    <script type="module" src="https://myvouch.es/build/assets/app-4a6b484f.js"></script>
+    <script src="https://kit.fontawesome.com/484893fcc1.js" crossorigin="anonymous"></script>
+
+    <!-- Styles -->
+    <style>
+        [wire\:loading],
+        [wire\:loading\.delay],
+        [wire\:loading\.inline-block],
+        [wire\:loading\.inline],
+        [wire\:loading\.block],
+        [wire\:loading\.flex],
+        [wire\:loading\.table],
+        [wire\:loading\.grid],
+        [wire\:loading\.inline-flex] {
+            display: none;
+        }
+
+        [wire\:loading\.delay\.shortest],
+        [wire\:loading\.delay\.shorter],
+        [wire\:loading\.delay\.short],
+        [wire\:loading\.delay\.long],
+        [wire\:loading\.delay\.longer],
+        [wire\:loading\.delay\.longest] {
+            display: none;
+        }
+
+        [wire\:offline] {
+            display: none;
+        }
+
+        [wire\:dirty]:not(textarea):not(input):not(select) {
+            display: none;
+        }
+
+        input:-webkit-autofill,
+        select:-webkit-autofill,
+        textarea:-webkit-autofill {
+            animation-duration: 50000s;
+            animation-name: livewireautofill;
+        }
+
+        @keyframes livewireautofill {
+            from {}
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <script src="https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js"></script>
+    <script>
+        var sf = new Snowflakes({
+            color: "#ffffff",
+            count: 100,
+            speed: 1.2,
+            minSize: 2,
+            maxSize: 10
+        });
+    </script> -->
+
+    <nav id="sidebarMenu" class="collapse d-lg-block sidebar">
+        <div class="position-sticky">
+            <div class="list-group list-group-flush mx-3 mt-4">
+                <div>
+                    <h5 class="mt-0 user">👋 Hey, <span class="text-primary">Slot Bot</span></h5>
+                    <hr class="mt-2 mb-2">
+                    <h5 class="mt-3 mb-1">General</h5>
+                    <a href="https://myvouch.es/dashboard" class="list-group-item active">
+                            <i class="fas fa-chart-pie me-3 text-primary"></i><span>Dashboard</span>
+                        </a>
+                    <a href="https://myvouch.es/subscription" class="list-group-item ">
+                            <i class="fas fa-money-bills me-3 text-primary"></i><span>Subscription</span>
+                        </a>
+                    <a href="https://myvouch.es/bot-configuration" class="list-group-item ">
+                            <i
+                                class="fas fa-screwdriver-wrench me-3 text-primary"></i><span>Bot Configuration</span>
+                        </a>
+                    <a href="https://myvouch.es/vouches" class="list-group-item ">
+                            <i class="fas fa-star me-3 text-primary"></i><span>Vouches</span>
+                        </a>
+                    <span data-bs-toggle="tooltip" data-bs-custom-class="light-tooltip" data-bs-placement="right" data-bs-title="Unlock this feature upgrading your current subscription to Business!">
+                                <a href="https://myvouch.es/dashboard" class="list-group-item disabled">
+                                    <i class="fas fa-ban me-3 text-light"></i><span>Blacklist<i
+                                            class="fa-solid fa-warning text-warning ms-2"></i></span>
+                    </a>
+                    </span>
+                </div>
+
+                <div>
+                    <h5 class="mt-2 mb-1">Profile</h5>
+                    <span data-bs-toggle="tooltip" data-bs-custom-class="light-tooltip" data-bs-placement="right" data-bs-title="Unlock this feature upgrading your current subscription to Premium!">
+                                <a target="_blank" href="https://myvouch.es/dashboard" class="list-group-item disabled">
+                                    <i class="fas fa-link me-3 text-light"></i><span>View Profile<i
+                                            class="fa-solid fa-warning text-warning ms-2"></i></span>
+                    </a>
+                    </span>
+                    <span data-bs-toggle="tooltip" data-bs-custom-class="light-tooltip" data-bs-placement="right" data-bs-title="Unlock this feature upgrading your current subscription to Premium!">
+                                <a href="https://myvouch.es/dashboard" class="list-group-item disabled">
+                                    <i class="fas fa-user-pen me-3 text-light"></i><span>Customize Profile<i
+                                            class="fa-solid fa-warning text-warning ms-2"></i></span>
+                    </a>
+                    </span>
+                    <span data-bs-toggle="tooltip" data-bs-custom-class="light-tooltip" data-bs-placement="right" data-bs-title="Unlock this feature upgrading your current subscription to Business!">
+                                <a href="https://myvouch.es/dashboard" class="list-group-item disabled">
+                                    <i class="fas fa-globe me-3 text-light"></i><span>Domain Connection<i
+                                            class="fa-solid fa-warning text-warning ms-2"></i></span>
+                    </a>
+                    </span>
+                </div>
+
+                <div>
+                    <h5 class="mt-2 mb-1">Others</h5>
+                    <a href="https://myvouch.es/affiliate-program" class="list-group-item ">
+                            <i class="fas fa-users me-3 text-primary"></i><span>Affiliate Program</span>
+                        </a>
+                    <a href="https://myvouch.es/partners" class="list-group-item ">
+                            <i class="fas fa-handshake me-3 text-primary"></i><span>Partners</span>
+                        </a>
+                </div>
+
+                <div>
+                    <h5 class="mt-2 mb-1">Need help?</h5>
+                    <a href="https://myvouch.es/support" class="list-group-item ">
+                            <i class="fas fa-headset me-3 text-primary"></i><span>Support</span>
+                        </a>
+                </div>
+
+                <div>
+                    <h5 class="mt-2 mb-1">Account</h5>
+                    <a href="https://myvouch.es/settings" class="list-group-item ">
+                            <i class="fas fa-gear me-3 text-primary"></i><span>Settings</span>
+                        </a>
+                    <form method="POST" action="https://myvouch.es/logout">
+                        <input type="hidden" name="_token" value="CI8nelU2hSRO0NWq1KyFdgFjLWGLsUo7srFsVG79"> <a href="https://myvouch.es/logout" class="list-group-item text-danger" onclick="event.preventDefault();
+                            this.closest('form').submit();">
+                                <i class="fas fa-right-from-bracket me-3"></i><span>Logout</span>
+                            </a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <nav id="navigation" class="navbar auth-navbar navbar-expand-xl fixed-top">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offCanvasNavbar" aria-controls="offCanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <a class="navbar-brand" href="https://myvouch.es">
+                <img class="me-2 mb-1" src="/storage/logos/logo.png" height="35px" alt="logo">
+            </a>
+
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offCanvasNavbar">
+                <div class="offcanvas-header">
+                    <a class="navbar-brand" href="https://myvouch.es">
+                        <img class="me-2 mb-1" src="/storage/logos/logo.png" height="35px"
+                            alt="logo">
+                    </a>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav auth-navbar flex-grow-1 pe-3">
+                        <div class="list-group list-group-flush">
+                            <div>
+                                <h5 class="user mt-0">👋 Hey, <span class="text-primary">Slot Bot</span></h5>
+                                <hr class="mt-2 mb-2">
+                                <h5 class="mt-3 mb-1">General</h5>
+                                <li class="nav-item">
+                                    <a href="https://myvouch.es/dashboard" class="nav-link active">
+                                            <i
+                                                class="fas fa-chart-pie me-3 text-primary"></i><span>Dashboard</span>
+                                        </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://myvouch.es/subscription" class="nav-link ">
+                                            <i
+                                                class="fas fa-money-bills me-3 text-primary"></i><span>Subscription</span>
+                                        </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://myvouch.es/bot-configuration" class="nav-link ">
+                                            <i
+                                                class="fas fa-screwdriver-wrench me-3 text-primary"></i><span>Bot Configuration</span>
+                                        </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://myvouch.es/vouches" class="nav-link ">
+                                            <i class="fas fa-star me-3 text-primary"></i><span>Vouches</span>
+                                        </a>
+                                </li>
+                                <span data-bs-toggle="tooltip" data-bs-custom-class="light-tooltip" data-bs-placement="right" data-bs-title="Unlock this feature upgrading your current subscription to Business!">
+                                            <li class="nav-item">
+                                                <a href="https://myvouch.es/dashboard" class="nav-link disabled text-light">
+                                                    <i class="fas fa-ban me-3 text-light"></i><span>Blacklist <i
+                                                            class="fa-solid fa-warning ms-2 text-warning"></i></span>
+                                </a>
+                                </li>
+                                </span>
+                            </div>
+
+                            <div>
+                                <h5 class="mt-3 mb-1">Profile</h5>
+                                <span data-bs-toggle="tooltip" data-bs-custom-class="light-tooltip" data-bs-placement="right" data-bs-title="Unlock this feature upgrading your current subscription to Premium!">
+                                            <li class="nav-item">
+                                                <a href="https://myvouch.es/dashboard" class="nav-link disabled  text-light">
+                                                    <i class="fas fa-link me-3 text-light"></i><span>View Profile<i
+                                                            class="fa-solid fa-warning text-warning ms-2"></i></span>
+                                </a>
+                                </li>
+                                </span>
+                                <span data-bs-toggle="tooltip" data-bs-custom-class="light-tooltip" data-bs-placement="right" data-bs-title="Unlock this feature upgrading your current subscription to Premium!">
+                                            <li class="nav-item">
+                                                <a href="https://myvouch.es/dashboard" class="nav-link disabled text-light">
+                                                    <i class="fas fa-user-pen me-3 text-light"></i><span>Customize Profile<i
+                                                            class="fa-solid fa-warning text-warning ms-2"></i></span>
+                                </a>
+                                </li>
+                                </span>
+                                <span data-bs-toggle="tooltip" data-bs-custom-class="light-tooltip" data-bs-placement="right" data-bs-title="Unlock this feature upgrading your current subscription to Business!">
+                                            <li class="nav-item">
+                                                <a href="https://myvouch.es/dashboard" class="nav-link disabled text-light">
+                                                    <i class="fas fa-globe me-3 text-light"></i><span>Domain Connection
+                                                        <i class="fa-solid fa-warning ms-2 text-warning"></i></span>
+                                </a>
+                                </li>
+                                </span>
+                            </div>
+
+                            <div>
+                                <h5 class="mt-3 mb-1">Others</h5>
+                                <li class="nav-item">
+                                    <a href="https://myvouch.es/affiliate-program" class="nav-link ">
+                                            <i
+                                                class="fas fa-users me-3 text-primary"></i><span>Affiliate Program</span>
+                                        </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://myvouch.es/partners" class="nav-link ">
+                                            <i
+                                                class="fas fa-handshake me-3 text-primary"></i><span>Partners</span>
+                                        </a>
+                                </li>
+                            </div>
+
+                            <div>
+                                <h5 class="mt-3 mb-1">Need help?</h5>
+                                <li class="nav-item">
+                                    <a href="https://myvouch.es/support" class="nav-link ">
+                                            <i
+                                                class="fas fa-headset me-3 text-primary"></i><span>Support</span>
+                                        </a>
+                                </li>
+                            </div>
+
+                            <div>
+                                <h5 class="mt-3 mb-1">Account</h5>
+                                <li class="nav-item">
+                                    <a href="https://myvouch.es/settings" class="nav-link ">
+                                            <i
+                                                class="fas fa-gear me-3 text-primary"></i><span>Settings</span>
+                                        </a>
+                                </li>
+                                <form method="POST" action="https://myvouch.es/logout">
+                                    <input type="hidden" name="_token" value="CI8nelU2hSRO0NWq1KyFdgFjLWGLsUo7srFsVG79">
+                                    <li class="nav-item">
+                                        <a href="https://myvouch.es/logout" class="nav-link text-danger" onclick="event.preventDefault(); this.closest('form').submit();">
+                                                <i
+                                                    class="fas fa-right-from-bracket me-3"></i><span>Logout</span>
+                                            </a>
+                                    </li>
+                                </form>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+
+            <div wire:id="qqprNuPtrtHfc194Q58D" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;qqprNuPtrtHfc194Q58D&quot;,&quot;name&quot;:&quot;profile.navbar-notifications&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;dashboard&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[&quot;render&quot;]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;2aab4b61&quot;,&quot;data&quot;:[],&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;642208ab733c25e2ae6cb6a87330066670bc356eaaed4f4052cf28014f9441f1&quot;}}">
+                <a class="nav-link dropdown-toggle me-3" id="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="fas fa-bell"></i>
+            </a>
+                <ul class="dropdown-menu dropdown-menu-end dropdown-notifications" style="min-width: 350px" aria-labelledby="dropdown">
+                    <div class="row">
+                        <div class="col-9">
+                            <h5 class="dropdown-header ">Notifications (0)</h5>
+                        </div>
+                        <div class="col-3 text-end">
+                        </div>
+                    </div>
+                    <hr class="dropdown-divider" style="margin-bottom: 0">
+                    <li class="my-3">
+                        <p class="dropdown-text"><i class="me-2 text-primary fa-solid fa-flag"></i> You don&#039;t have any notification</p>
+                    </li>
+                </ul>
+            </div>
+            <!-- Livewire Component wire-end:qqprNuPtrtHfc194Q58D -->
+        </div>
+    </nav>
+
+
+    <!-- Main layout -->
+    <main class="auth-panel-data">
+        <div class="container-auth-panel">
+            <!--
+            <div class="alert alert-warning alert-dismissible fade show mb-4" role="alert">
+              <strong>IMPORTANT NEW:</strong> <a class="fw-bold" href="https://github.com/myvouches/tokens" target="_blank">Click here</a> - Reset your bot token and add it back to the bot configuration. 
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            -->
+            <div class="title">
+                <h1 class="text-capitalize">👋 Hey, <span class="text-primary">Slot Bot</span></h1>
+                <hr>
+            </div>
+
+            <div class="row dashboard gy-4">
+                <div class="col-xl-7">
+                    <div class="card card-secondary">
+                        <div class="card-h">
+                            <div class="row">
+                                <div class="col-8">
+                                    <h3>Received vouches</h3>
+                                </div>
+                                <div class="col-4 text-end">
+                                    <span class="text-light">Weekly</span>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="img-fluid" id="vouchesChart"></div>
+                    </div>
+                </div>
+                <div class="col-xl-5">
+                    <div class="card card-secondary mb-4">
+                        <div class="card-h">
+                            <div class="row">
+                                <div class="col-10">
+                                    <h3><i class="fa-solid fa-star me-3 text-primary"></i>Vouches Stats</h3>
+                                </div>
+                                <div class="col-2 text-end">
+                                    <a class="btn-link" href="https://myvouch.es/vouches"><i
+                                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                        <p><i class="fa-solid fa-user-tag me-2 text-primary"></i> Total vouches: <span class="text-primary">0</span></p>
+                        <p><i class="fa-solid fa-star me-2 text-primary"></i> Score: <span class="text-primary">0.0 of 5.0</span></p>
+                        <p class="mb-0"><i class="fa-solid fa-ranking-star me-2 text-primary"></i> Leaderboard position:
+                            <span class="text-primary">N/A</span>
+                        </p>
+                    </div>
+
+                    <div class="card card-secondary">
+                        <div class="card-h">
+                            <div class="row">
+                                <div class="col-10">
+                                    <h3><i class="fa-solid fa-money-bills me-3 text-primary"></i>Current plan</h3>
+                                </div>
+                                <div class="col-2 text-end">
+                                    <a class="btn-link" href="https://myvouch.es/subscription"><i
+                                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                        <p><i class="fas fa-money-bills me-2 text-primary"></i> Plan: <span class="text-primary">Default</span></p>
+                        <a class="btn-link" href="https://myvouch.es#pricing">Purchase a plan now <i
+                                    class="fa-solid fa-arrow-up-right-from-square ms-2"></i></a>
+                    </div>
+                </div>
+
+
+
+                <div class="title mt-5 mb-0">
+                    <h1>System Information</h1>
+                    <hr>
+                </div>
+
+                <div class="row mt-0 g-4">
+                    <div class="col-xl-8">
+                        <div class="card card-secondary">
+                            <div class="card-h">
+                                <h3><i class="fa-solid fa-rss me-3 text-primary"></i>News</h3>
+                                <hr>
+                            </div>
+                            <div class="card card-primary dashboard-news mb-3">
+                                <div class="row fw-bold">
+                                    <div class="col-xl-6">
+                                        <p class="mb-2 text-primary title"> Update 01/04/2025 - Pinned vouches</p>
+                                    </div>
+                                    <div class="col-xl-6 text-xl-end">
+                                        <p class="mb-2 text-light">2025-04-01 17:11:03</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <p class="mb-0">You can now pin important vouches to make them appear at the top of your list! Just head over to your Dashboard → Vouches and start pinning your favorites. Highlight your best feedback and make it stand out!
+                                </p>
+                            </div>
+                            <div class="card card-primary dashboard-news mb-3">
+                                <div class="row fw-bold">
+                                    <div class="col-xl-6">
+                                        <p class="mb-2 text-primary title"> IMPORTANT INFORMATION - Reset your bot token and update it on your dashboard</p>
+                                    </div>
+                                    <div class="col-xl-6 text-xl-end">
+                                        <p class="mb-2 text-light">2025-02-05 14:06:30</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <p class="mb-0">Hi there, We recently discovered a bug in how we store the proof of your vouches. As a precaution, we'll be revoking all your bot tokens by posting them publicly on GitHub. To keep your bot running smoothly, please reset
+                                    your token and update it on your dashboard. We apologize for the inconvenience, and as a gesture of goodwill, we'll be adding 7 extra days to all active subscriptions. Thanks for your understanding!</p>
+                            </div>
+                            <div class="card card-primary dashboard-news mb-3">
+                                <div class="row fw-bold">
+                                    <div class="col-xl-6">
+                                        <p class="mb-2 text-primary title"> Black Friday 20% discount 1 more week!</p>
+                                    </div>
+                                    <div class="col-xl-6 text-xl-end">
+                                        <p class="mb-2 text-light">2024-12-01 11:51:57</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <p class="mb-0">We have extended the 20% Black Friday discount for 1 more week! <br>Join up our discord server to get the discount code!
+                                    <a href="https://discord.myvouch.es" target="_blank" class="btn-link">https://discord.myvouch.es</a></p>
+                            </div>
+                            <div class="card card-primary dashboard-news mb-3">
+                                <div class="row fw-bold">
+                                    <div class="col-xl-6">
+                                        <p class="mb-2 text-primary title"> Enable/disable embed features!</p>
+                                    </div>
+                                    <div class="col-xl-6 text-xl-end">
+                                        <p class="mb-2 text-light">2024-10-14 19:56:46</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <p class="mb-0">You can now enable/disable showing in vouch/restore vouch embed the following features: <br> - Enable or disable showing the Nº of vouch <br> - Enable or disable mentioning the username that vouches (more useful when restoring
+                                    so it doesn't show up just their discord ID)</p>
+                            </div>
+                            <div class="card card-primary dashboard-news mb-3">
+                                <div class="row fw-bold">
+                                    <div class="col-xl-6">
+                                        <p class="mb-2 text-primary title"> GIVEAWAY! x1 Monthly Business Subscription</p>
+                                    </div>
+                                    <div class="col-xl-6 text-xl-end">
+                                        <p class="mb-2 text-light">2024-06-13 10:44:03</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <p class="mb-0">Join our discord to participate the giveaway of 1 monthly business subscription!
+                                    <a class="btn-link" target="_blank" href="https://discord.gg/dcmyvouches">Join our discord server now</a></p>
+                            </div>
+                            <div class="card card-primary dashboard-news mb-3">
+                                <div class="row fw-bold">
+                                    <div class="col-xl-6">
+                                        <p class="mb-2 text-primary title"> Changelog 08/06 - New features!</p>
+                                    </div>
+                                    <div class="col-xl-6 text-xl-end">
+                                        <p class="mb-2 text-light">2024-06-11 21:28:55</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <p class="mb-0">
+                                    <ul class="text-white">
+                                        <li>You can now enjoy Lifetime Subscriptions, forget about paying month by month!</li>
+                                        <li>3 types of themes have been added for your public profile. (Polaris, Orion & Hydra). Select the one that best suits and you like for your profile!</li>
+                                        <li>Did you ask to add more socials? Here it is! Now you can link up to 10 links in your profile. (If you need a specific platform, let me know)</li>
+                                        <li>Awards have appeared on MyVouches! More awards will be created little by little, you can see which ones there are and what you have to do to win them at <a class="btn-link" href="https://myvouch.es/customize-profile">https://myvouch.es/customize-profile</a></li>
+                                        <li>Now you can add a biography to your profile, so your users can know more about your services!</li>
+                                        <li>The /stats command has been modified, now the awards that you have assigned to your profile will appear, the days you have left to subscribe and your links</li>
+                                        <li>Also with the /stats command, you can now display information about other MyVouches profiles, just enter the name of the specific user's MyVouches profile</li>
+                                    </ul>
+                                </p>
+                            </div>
+                            <div class="card card-primary dashboard-news mb-3">
+                                <div class="row fw-bold">
+                                    <div class="col-xl-6">
+                                        <p class="mb-2 text-primary title"> We partnered up with SellSN.io!</p>
+                                    </div>
+                                    <div class="col-xl-6 text-xl-end">
+                                        <p class="mb-2 text-light">2024-04-19 19:56:41</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <p class="mb-0"><strong>
+SellSN offers:<br>
+- “Cards to Crypto” - With SellSN, you can accept payments with Cards and Payout in Crypto with 0 KYC.<br>
+- 0% Fees - Yes, no more losing money to degenerate entrepreneurs.<br>
+- Free PayPal F&F/CashApp - SellSN is THE ONLY platform that allows sellers to accept PayPal F&F FULLY for free!<br><br>
+</strong> Coming from another platform?<br> - Migrate now and receive a free PRO plan; they will help you move everything! Migrate Now! <br><br> In summary: Switch to SellSN; they outperform every platform out there! Trust us; you won’t regret it!</p>
+                            </div>
+                            <div class="card card-primary dashboard-news mb-3">
+                                <div class="row fw-bold">
+                                    <div class="col-xl-6">
+                                        <p class="mb-2 text-primary title"> NEW Bot and Features!</p>
+                                    </div>
+                                    <div class="col-xl-6 text-xl-end">
+                                        <p class="mb-2 text-light">2024-02-09 23:20:08</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <p class="mb-0">Hello! We've solved the issue with the default bot, it is now verified and can join more than +100 servers. We also added a lot of new features! Check our discord for more information. Enjoy!</p>
+                            </div>
+                            <div class="card card-primary dashboard-news mb-3">
+                                <div class="row fw-bold">
+                                    <div class="col-xl-6">
+                                        <p class="mb-2 text-primary title"> EARN MONEY AND FREE SUBSCRIPTION DAYS WITH US!</p>
+                                    </div>
+                                    <div class="col-xl-6 text-xl-end">
+                                        <p class="mb-2 text-light">2023-12-18 13:18:01</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <p class="mb-0">We launched our incredible Affiliate Program, with benefits of 30% of the sale from the people you recommend and +10 days added to your subscription (if you are already customer). What are you waiting for? There is no excuses
+                                    to start earning with us! Spread the MyVouches Service now!</p>
+                            </div>
+                            <div class="card card-primary dashboard-news mb-3">
+                                <div class="row fw-bold">
+                                    <div class="col-xl-6">
+                                        <p class="mb-2 text-primary title"> ADD THE NEW MYVOUCHES BOT!</p>
+                                    </div>
+                                    <div class="col-xl-6 text-xl-end">
+                                        <p class="mb-2 text-light">2023-12-08 23:53:00</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <p class="mb-0">The MyVouches Bot got disabled, if you were using the MyVouches Bot (Not the Custom Bot), please invite the bot again in the Bot Configuration Page. The old bot won't work as expected. Sorry for the inconvenience! Don't
+                                    forget to join our discord (discord.gg/myvouches) to be aware of the latest announcements. Thank you!</p>
+                            </div>
+                            <div class="card card-primary dashboard-news ">
+                                <div class="row fw-bold">
+                                    <div class="col-xl-6">
+                                        <p class="mb-2 text-primary title"> Update 14/10/2023 - CHANGELOG!</p>
+                                    </div>
+                                    <div class="col-xl-6 text-xl-end">
+                                        <p class="mb-2 text-light">2023-10-15 17:46:51</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <p class="mb-0">The addition of a "Business" plan, offering extra profile customization, Discord vouch restoration, and domain connection features. Alongside this, premium plan prices have been lowered. Business plan customers can now
+                                    customize their vouch embeds by removing branding. Profile pictures are now supported for onsite vouches. The vouch command has been improved to accept image and video proofs, which are also imported to the website.
+                                    An automated command has been introduced to migrate past Discord vouches to current profiles. A new feature called Domain Connection is now available for Business Plan users, allowing for traffic redirection and metadata
+                                    customization for improved SEO. A Discord bot issue has been resolved. A free Reseller Plan has been added, enabling the purchase and resale of MyVouches Key Subscriptions. Additionally, a 1-day free trial version is
+                                    now accessible. Business customers benefit from extra profile customization options, including background, profile color editing, and the addition of a music background. Any errors onsite or with the discord bot, please
+                                    open a ticket. PREMIUM SUBSCRIPTIONS HAS BEEN TRANSFERED TO BUSINESS FOR FREE! Thanks for trusting MyVouches 🙂
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4">
+                        <div class="card card-secondary">
+                            <div class="card-h fw-bold">
+                                <h3><i class="fa-solid fa-spinner me-3 text-primary"></i>Status</h3>
+                                <hr>
+                                <p><i class="fa-solid fa-globe me-2 text-primary"></i> Website: <span class="text-success">Operational</span></p>
+                                <p><i class="fa-solid fa-server me-2 text-primary"></i> Website API: <span class="text-success">Operational</span></p>
+                                <p><i class="fa-brands fa-discord me-2 text-primary"></i> Discord Support: <span class="text-success">Operational</span></p>
+                                <p><i class="fa-solid fa-paper-plane me-2 text-primary"></i> Telegram Support: <span class="text-success">Operational</span></p>
+                                <p class="mb-0"><i class="fa-solid fa-envelope me-2 text-primary"></i> Website Ticket Support:
+                                    <span class="text-success">Operational</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script>
+        var vouchesData = [];
+
+        // Function to convert numeric month to abbreviated month name
+        function getMonthName(month) {
+            var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            return months[month - 1];
+        }
+
+        // Get current date
+        var currentDate = new Date();
+
+        // Prepare data for the last 7 days
+        var seriesData = [];
+        var categoriesData = [];
+        for (var i = 0; i < 8; i++) {
+            var date = new Date(currentDate);
+            date.setDate(date.getDate() - i);
+            var day = (date.getDate() < 10 ? '0' : '') + date.getDate();
+            var monthName = getMonthName(date.getMonth() + 1);
+
+            var dateString = day + ' ' + monthName;
+
+            // Check if vouches data is available for the current date
+            if (vouchesData[dateString]) {
+                // Push the number of vouches for the current date to seriesData
+                seriesData.unshift(vouchesData[dateString].length);
+            } else {
+                // If no vouches data available, push 0
+                seriesData.unshift(0);
+            }
+            // Push the date string to categoriesData
+            categoriesData.unshift(dateString);
+        }
+
+        var options = {
+            series: [{
+                name: 'Vouches',
+                data: seriesData
+            }],
+            chart: {
+                type: 'area',
+                height: 310,
+                stacked: true,
+                toolbar: {
+                    show: false
+                }
+            },
+            colors: ['#ff765e'], // Change color as needed
+            dataLabels: {
+                enabled: false
+            },
+            stroke: {
+                curve: 'smooth'
+            },
+            grid: {
+                borderColor: '#3d3d3d' // Change this to your desired color
+            },
+            fill: {
+                type: 'gradient',
+                gradient: {
+                    opacityFrom: 0.6,
+                    opacityTo: 0.8,
+                }
+            },
+            plotOptions: {
+                bar: {
+                    horizontal: false,
+                },
+            },
+            xaxis: {
+                categories: categoriesData,
+                labels: {
+                    rotate: -45,
+                    style: {
+                        colors: '#fff',
+                        fontFamily: 'Montserrat',
+                    }
+                }
+            },
+            yaxis: {
+                labels: {
+                    style: {
+                        colors: '#cacaca' // Change this to your desired color
+                    }
+                }
+            },
+        };
+
+        var chart = new ApexCharts(document.querySelector("#vouchesChart"), options);
+        chart.render();
+    </script>
+    <script type="module">
+        $(function() { var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]')) var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) { return new bootstrap.Tooltip(tooltipTriggerEl) }) });
+    </script>
+    <script src="/livewire/livewire.js?id=90730a3b0e7144480175" data-turbo-eval="false" data-turbolinks-eval="false"></script>
+    <script data-turbo-eval="false" data-turbolinks-eval="false">
+        window.livewire = new Livewire();
+        window.Livewire = window.livewire;
+        window.livewire_app_url = '';
+        window.livewire_token = 'CI8nelU2hSRO0NWq1KyFdgFjLWGLsUo7srFsVG79';
+        window.deferLoadingAlpine = function(callback) {
+            window.addEventListener('livewire:load', function() {
+                callback();
+            });
+        };
+        let started = false;
+        window.addEventListener('alpine:initializing', function() {
+            if (!started) {
+                window.livewire.start();
+                started = true;
+            }
+        });
+        document.addEventListener("DOMContentLoaded", function() {
+            if (!started) {
+                window.livewire.start();
+                started = true;
+            }
+        });
+    </script>
+    <script>
+        (function() {
+            function c() {
+                var b = a.contentDocument || a.contentWindow.document;
+                if (b) {
+                    var d = b.createElement('script');
+                    d.innerHTML = "window.__CF$cv$params={r:'97cdeb552e8d07ee',t:'MTc1NzQ5Njc1OA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+                    b.getElementsByTagName('head')[0].appendChild(d)
+                }
+            }
+            if (document.body) {
+                var a = document.createElement('iframe');
+                a.height = 1;
+                a.width = 1;
+                a.style.position = 'absolute';
+                a.style.top = 0;
+                a.style.left = 0;
+                a.style.border = 'none';
+                a.style.visibility = 'hidden';
+                document.body.appendChild(a);
+                if ('loading' !== document.readyState) c();
+                else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c);
+                else {
+                    var e = document.onreadystatechange || function() {};
+                    document.onreadystatechange = function(b) {
+                        e(b);
+                        'loading' !== document.readyState && (document.onreadystatechange = e, c())
+                    }
+                }
+            }
+        })();
+    </script>
+</body>
+
+</html>
